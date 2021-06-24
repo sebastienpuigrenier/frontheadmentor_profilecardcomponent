@@ -1,0 +1,135 @@
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0px;
+  padding:  0px;
+}
+
+/* def of var */
+:root {
+  --darkcyan: hsl(185, 75%, 39%);
+  --verydarkblue: hsl(229, 23%, 23%);
+  --grayishblue: hsl(227, 10%, 46%);
+  --darkgray: hsl(0, 0%, 59%);
+/* heigth of card and margin to center it */
+  --card_height: 374px;
+  --card_margin: calc((100vh - var(--card_height))/2);
+/* calc to disable svg to move */
+  --position_bg_top: calc(-301px - ((1440px - 100vw) / 2));
+  --position_bg_bottom: calc(-240px - ((1440px - 100vw) / 2));
+}
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: var(--darkcyan);
+  background-image: url(./../images/bg-pattern-top.svg),
+                    url(./../images/bg-pattern-bottom.svg);
+  background-size:  1000px 1000px,
+                    1000px 1000px;
+  background-repeat: no-repeat;
+  background-position:  top -450px left var(--position_bg_top),
+                        bottom -610px right var(--position_bg_bottom);
+}
+
+.card {
+  width: 350px;
+  height: var(--card_height);
+  background-color: white;
+  border-radius: 15px;
+  margin: var(--card_margin) auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card_background {
+  height: 140px;
+  border-radius: 10px 10px 0px 0px;
+  background-image: url(./../images/bg-pattern-card.svg);
+  background-position: top;
+}
+
+.photo {
+  margin: -53px auto 0px;
+}
+
+.identity {
+  margin: 19px auto;
+  font-size: 18px;
+  color: var(--verydarkblue);
+}
+
+.separator {
+  margin-top: 5px;
+  margin-bottom: 28px;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #E7E7E7;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  margin: 0px 29px 0px 22px;
+}
+
+.stat mark{
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--verydarkblue);
+}
+
+.stat p{
+  font-size: 10px;
+  color: var(--darkgray);
+  letter-spacing: .1rem;
+  margin-top: 6px;
+}
+
+#avatar {
+  border-radius: 50%;
+  border:  solid white;
+  border-width: 5px;
+  background-color: white;
+}
+
+#age {
+  display: inline-block;
+  color: var(--darkgray);
+}
+
+#age::before {
+  content: ' \00a0';
+}
+
+#city {
+  margin-top: 11px;
+  font-size: 14px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* attribution zone for credits */
+    .attribution {
+      margin-top: -50px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: white;
+      text-decoration: none;
+    }
+
+/* responsive for card width */
+@media (max-width: 375px) {
+
+.card {
+  width: 326px;
+}
+
+}
